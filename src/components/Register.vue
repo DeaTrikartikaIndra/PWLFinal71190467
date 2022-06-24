@@ -34,7 +34,7 @@
       <v-btn v-on:click="register" >Register</v-btn>
     </v-card-actions>
   </v-card>
-  <div>Have account?</div>
+  <div class="mx-auto my-12">Have account?</div>
   <div><router-link to="/login">Login here</router-link></div>
   </v-container>
   </v-content>

@@ -3,13 +3,13 @@
   <v-app>
     <v-toolbar
     white
-    color=""
+    color="blue lighten-4"
   >
     <v-toolbar-title><router-link to="/">
       <v-img
         src = 'https://firebasestorage.googleapis.com/v0/b/pwlfinal71190467.appspot.com/o/Deapedia-removebg-preview.png?alt=media&token=02912018-4b32-4af6-b76b-3a62a42ae9b4'
-        height = 150
-        width = 150>
+        height = 100
+        width = 100>
         </v-img>
     </router-link></v-toolbar-title>
     <v-text-field label="Search" class="pt-8 pl-2 d-none d-sm-flex"
@@ -32,7 +32,7 @@
           <v-card-text>Login as:</v-card-text>
           <v-card-text>{{this.$store.getters.loginInfo}}</v-card-text>
           <v-card-action>
-            <v-btn block @click ="logout">
+            <v-btn block @click ="logout" color = "light-blue lighten-4">
               logout
             </v-btn>
           </v-card-action>
@@ -44,7 +44,7 @@
     </v-btn>
   </v-toolbar>
   
-  <v-container class="grey lighten-5">
+  <v-container>
     <v-row >
       <v-col
         cols="12"
@@ -52,23 +52,12 @@
         v-for="item in filteredMk" 
     :key="item.id"
       >
-        <v-card
-          class="pa-2"
-          outlined
-          tile
-        >
-           <v-card
-    
-    :loading="loading"
-    class="mx-auto my-12"
-    max-width="200"
-  >
       <v-img
       height="250"
       :src= item.link
     ></v-img>
 
-      <v-list-item-title><h3>{{item.nama}}</h3></v-list-item-title>
+      <v-list-item-title>{{item.nama}}</v-list-item-title>
 
     <v-card-subtitle>
       <v-row
@@ -84,24 +73,24 @@
       
         <v-rating
           :value=item.rating
-          color="amber"
+          color="blue"
           dense
           half-increments
           readonly
           size="14"
         ></v-rating>
 
-        <div class="grey--text ms-4">
+        <div class="d-flex">
           {{item.rating}} {{(item.pembeli)}}
         </div>
-        <div><h3>Rp{{(item.harga).toLocaleString("id-ID")}}</h3></div>
+        <v-list-item><div class="d-flex"><h3>Rp{{(item.harga).toLocaleString("id-ID")}}</h3></div></v-list-item>
       </v-row>
 
     </v-card-subtitle>
 
     <v-card-actions>
       <v-btn
-        color="orange lighten-2"
+        color="blue"
         text
         @click="addProductToCart(item,1)"
       >
@@ -127,11 +116,6 @@
         </v-card-text>
       </div>
     </v-expand-transition>
-  </v-card>
-  
-       
-  </v-card>
-        <!-- </v-card> -->
       </v-col>
     </v-row>
   </v-container>
@@ -151,7 +135,7 @@ export default {
     return {
       items: [],
       cari: this.$store.state.search,
-      show: true,
+      show: false,
       loading: false,
 
   }

@@ -2,13 +2,13 @@
   <v-app>
     <v-toolbar
     white
-    color=""
+    color="blue lighten-4"
   >
     <v-toolbar-title><router-link to="/">
       <v-img
         src = 'https://firebasestorage.googleapis.com/v0/b/pwlfinal71190467.appspot.com/o/Deapedia-removebg-preview.png?alt=media&token=02912018-4b32-4af6-b76b-3a62a42ae9b4'
-        height = 150
-        width = 150>
+        height = 100
+        width = 100>
         </v-img>
     </router-link></v-toolbar-title>
     <v-text-field label="Search" class="pt-8 pl-2 d-none d-sm-flex"
@@ -31,7 +31,7 @@
           <v-card-text>Login as:</v-card-text>
           <v-card-text>{{this.$store.getters.loginInfo}}</v-card-text>
           <v-card-action>
-            <v-btn block @click ="logout">
+            <v-btn block @click ="logout" color = "light-blue lighten-4">
               logout
             </v-btn>
           </v-card-action>
@@ -70,12 +70,12 @@
         <v-list-item-text>Rp{{(item.harga).toLocaleString("id-ID")}}</v-list-item-text>
         <v-list-item-content>
             <v-list-item-icon>
-              <v-btn class="mx-2" v-on:click="min(item)">
+              <v-btn rounded color= "blue" class="mx-2" v-on:click="min(item)">
               <v-icon>mdi-minus</v-icon>
               </v-btn>
               <v-text class="mt-2">{{item.quantity}}</v-text>
 
-              <v-btn class="mx-2" v-on:click="plus(item)">
+              <v-btn rounded color= "blue" class="mx-2" v-on:click="plus(item)">
               <v-icon>mdi-plus</v-icon>
               </v-btn>
              
@@ -95,7 +95,7 @@
         <v-list-item-title></v-list-item-title>
     <v-btn
       depressed
-      color="primary"
+      color="blue lighten-3"
       @click="checkout()"
     >
       CHECKOUT

@@ -2,11 +2,12 @@
 <v-content>
 <v-container>
   <v-card
-    class="overflow-hidden-center"
+    class="vue-template"
   >
     <v-toolbar
       flat
       color="white"
+     
     >
       <v-icon>mdi-account</v-icon>
       <v-toolbar-title class="font-weight-light">
@@ -32,6 +33,7 @@
       <v-spacer></v-spacer>
       <v-btn
         @click="login"
+        color ="blue"
       >
         Login
       </v-btn>
@@ -39,15 +41,14 @@
 
   </v-card>
   
-  <div>Don't have account?</div>
+  <div  class="mx-auto my-12">Don't have account?</div>
   <div><router-link to="/register">Register here</router-link></div>
   </v-container>
   </v-content>
 </template>
 
 <script>
-// import { onBeforeMount } from 'vue'
-// import { useRouter, useRoute } from 'vue-router'
+
 import firebase from 'firebase/compat/app'
 
 

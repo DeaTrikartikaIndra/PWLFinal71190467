@@ -3,12 +3,12 @@
   <v-app>
     <v-toolbar
     white
-    color=""
+    color="blue lighten-4"
   >
     <v-toolbar-title><router-link to="/">
       <v-img
         src = 'https://firebasestorage.googleapis.com/v0/b/pwlfinal71190467.appspot.com/o/Deapedia-removebg-preview.png?alt=media&token=02912018-4b32-4af6-b76b-3a62a42ae9b4'
-        height = 150
+        height = 50
         width = 150>
         </v-img>
     </router-link></v-toolbar-title>
@@ -32,7 +32,7 @@
           <v-card-text>Login as:</v-card-text>
           <v-card-text>{{this.$store.getters.loginInfo}}</v-card-text>
           <v-card-action>
-            <v-btn block @click ="logout">
+            <v-btn block @click ="logout" color = "light-blue lighten-4">
               logout
             </v-btn>
           </v-card-action>
@@ -88,7 +88,7 @@
       
         <v-rating
           :value=item.rating
-          color="amber"
+          color="blue"
           dense
           half-increments
           readonly
@@ -107,7 +107,7 @@
 
     <v-card-actions>
       <v-btn
-        color="orange lighten-2"
+        color="blue"
         text
         @click="addProductToCart(item,1)"
       >
@@ -161,7 +161,7 @@ export default {
       selection: 1,
       cari: "",
       select: '',
-      show: true,
+      show: false,
   }
   },
 
